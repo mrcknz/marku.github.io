@@ -1,24 +1,31 @@
-import { globalCss } from '@wrthwhl/ui';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import { MantineProvider } from '@mantine/core';
+import { theme, styles } from '@wrthwhl/ui';
 
-const globalStyles = globalCss({
-  'html,body': { backgroundColor: '$indigo1' },
-});
+export default function App(props: AppProps) {
+  const { Component, pageProps } = props;
 
-function CustomApp({ Component, pageProps }: AppProps) {
-  globalStyles();
   return (
     <>
       <Head>
-        <title>Welcome to wrthwhl!</title>
+        <title>WRTHWHL</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
       </Head>
-      <main className="app">
+
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        {...{
+          theme,
+          styles,
+        }}
+      >
         <Component {...pageProps} />
-      </main>
+      </MantineProvider>
     </>
   );
 }
-
-export default CustomApp;

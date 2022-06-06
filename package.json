@@ -9,6 +9,9 @@
   },
   "private": true,
   "dependencies": {
+    "@mantine/core": "^4.2.8",
+    "@mantine/hooks": "^4.2.8",
+    "@mantine/next": "^4.2.8",
     "@radix-ui/colors": "^0.1.8",
     "core-js": "^3.6.5",
     "next": "12.1.5",
