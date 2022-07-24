@@ -5,17 +5,32 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/content/**/*.ts"]
+        "lintFilePatterns": [
+          "libs/content/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/content"],
+      "outputs": [
+        "coverage/libs/content"
+      ],
       "options": {
         "jestConfig": "libs/content/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "contentlayer build"
+        ],
+        "cwd": "libs/content"
       }
     }
   },
