@@ -16,7 +16,7 @@ lastEditedAt: '23 July 2022'
 <Divider label={<><IconBulb size={14} /><Text color="dimmed" ml={5} size="xs">Skills</Text></>} labelPosition="Center"  />
 <Box size="sm" sx={(t) => ({ margin: `${t.other.fib( 3, 'em')} ${t.other.fib( 0, 'em')}`, display: "flex", flexDirection: "row", justifyContent: "space-evenly"})}>
   <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
-    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(3).keys()].map(() => (<IconStar size={16} />))}</Box>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(3).keys()].map((i) => (<IconStar key={1} size={16} />))}</Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
       <Text color="dimmed" size="sm">Development</Text>
       <Text size="sm">Javascript/Typescript, React, Next.js, Nx, MUI, RESTful, OpenAPI</Text>
@@ -31,7 +31,7 @@ lastEditedAt: '23 July 2022'
     </Box>
   </Box>
   <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
-    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(2).keys()].map(() => (<IconStar size={16} />))}</Box>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(2).keys()].map((i) => (<IconStar key={1} size={16} />))}</Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
       <Text color="dimmed" size="sm">Development</Text>
       <Text size="sm">Cypress, Node.js, Mantine, MDX, Python, GraphQL</Text>
@@ -46,7 +46,7 @@ lastEditedAt: '23 July 2022'
     </Box>
   </Box>
   <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
-    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(1).keys()].map(() => (<IconStar size={16} />))}</Box>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(1).keys()].map((i) => (<IconStar key={1} size={16} />))}</Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
       <Text color="dimmed" size="sm">Development</Text>
       <Text size="sm">Storybook, tRPC, Golang, Prisma</Text>
