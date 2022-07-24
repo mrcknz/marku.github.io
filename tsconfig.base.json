@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@wrthwhl/content": ["libs/content/.contentlayer/generated"],
       "@wrthwhl/ui": ["libs/ui/src/index.ts"]
     }
   },

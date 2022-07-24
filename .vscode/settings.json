@@ -5,7 +5,11 @@
   "spellright.documentTypes": [
     "markdown",
     "latex",
-    "plaintext"
+    "plaintext",
+    "mdx"
   ],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[mdx]":{
+    "editor.formatOnSave": false,
+  }
 }

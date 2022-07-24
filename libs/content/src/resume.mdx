@@ -1,0 +1,84 @@
+---
+lastEditedAt: '23 July 2022'
+---
+
+<Title style={{fontWeight: "bold", fontVariant: "all-small-caps", display:"inline-block", }} sx={(t)=>({color: t.colors.teal[5], cursor: "default", "&:hover":{color: t.colors.teal[3]}})}>Marco Kunz</Title>
+{/* <Text>Full-Stack Web Developer</Text>
+<Text color='dimmed' inherit>Technical Product Manager | Program Manager</Text> */}
+
+<Box
+  sx={(t) => ({
+    margin: `${t.other.fib( 2, 'em')} 0 ${t.other.fib(3, 'em')}`,
+  })}
+>
+  <Text size="md" sx={(t) => ({textAlign: "justify", color: t.colors.gray[2], cursor: "default"})}>Passionate and forward-thinking <Text component="i" color="teal" weight="bolder" size="md" sx={(t)=>({textDecoration: "underline", "&:hover":{color: t.colors.teal[3]}})}>Full-Stack Web Developer</Text> and <Text component="i" color="teal" weight="bolder" size="md" sx={(t)=>({textDecoration: "underline", "&:hover":{color: t.colors.teal[3]}})}>Technical Product Owner</Text> with 6+ years of experience in solving problems with software and delivering value to users. Broad range of experience with proven-ability to lead and develop distributed and interdisciplinary teams. Keen eye for the big picture and a forward-thinking mind with an unwavering focus on maximizing sustainable outcomes. Looking for an opportunity to join a self-sufficient, cross-functional team on a purposeful mission.</Text>
+</Box>
+<Divider label={<><IconBulb size={14} /><Text color="dimmed" ml={5} size="xs">Skills</Text></>} labelPosition="Center"  />
+<Box size="sm" sx={(t) => ({ margin: `${t.other.fib( 3, 'em')} ${t.other.fib( 0, 'em')}`, display: "flex", flexDirection: "row", justifyContent: "space-evenly"})}>
+  <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(3).keys()].map(() => (<IconStar size={16} />))}</Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Development</Text>
+      <Text size="sm">Javascript/Typescript, React, Next.js, Nx, MUI, RESTful, OpenAPI</Text>
+    </Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Delivery</Text>
+      <Text size="sm">Continuous Delivery, Monorepo</Text>
+    </Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Google Cloud</Text>
+      <Text size="sm">Cloud Run, Storage, Big Query</Text>
+    </Box>
+  </Box>
+  <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(2).keys()].map(() => (<IconStar size={16} />))}</Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Development</Text>
+      <Text size="sm">Cypress, Node.js, Mantine, MDX, Python, GraphQL</Text>
+    </Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Delivery</Text>
+      <Text size="sm">SQL, Test Automation, Pact Testing, CD4ML, Docker</Text>
+    </Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Google Cloud</Text>
+      <Text size="sm">Cloud Build, Error Reporting, Registry</Text>
+    </Box>
+  </Box>
+  <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(1).keys()].map(() => (<IconStar size={16} />))}</Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Development</Text>
+      <Text size="sm">Storybook, tRPC, Golang, Prisma</Text>
+    </Box>
+    <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
+      <Text color="dimmed" size="sm">Google Cloud</Text>
+      <Text size="sm">Cloud Functions</Text>
+    </Box>
+  </Box>
+</Box>
+<Divider label={<><IconBriefcase size={14} /><Text color="dimmed" ml={5} size="xs">Experience</Text></>} labelPosition="Center"  />
+<TimelineItem  title="Director Visual Intelligence" org="Solera" startYear="2019">Leading a distributed, autonomous and cross-functional team of 15 including full-stack engineers and data scientists that owns the technology component at the base of Solera's suite of AI driven claims solutions as well as the platform that is serving these components to the consumers.</TimelineItem>
+<TimelineItem  title="Product Owner Data Pipeline" org="Siroop" startYear="2016" endYear="2018">Leading a distributed, autonomous and cross-functional team of 15 including full-stack engineers and data scientists that owns the technology component at the base of Solera's suite of AI driven claims solutions as well as the platform that is serving these components to the consumers.</TimelineItem>
+<TimelineItem  title="Fleet Managere EMEA" org="Google Streetview" startYear="2013" endYear="2014">To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.</TimelineItem>
+<TimelineItem  title="Junior Researcher" org="Eawag" startYear="2010" endYear="2010">To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.</TimelineItem>
+<TimelineItem  title="Program Manager Hub Automation" org="Swiss Post International" startYear="2006" endYear="2011">To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.</TimelineItem>
+<Divider label={<><IconSchool size={14} /><Text color="dimmed" ml={5} size="xs">Education</Text></>} labelPosition="Center"  />
+<TimelineItem  title="Full-Stack Web Engineering Course" org="Codeworks" startYear="2018" endYear="2018">To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.</TimelineItem>
+<TimelineItem  title="B.Sc. in Business Engineering" org="University of Applied Sciences Northwestern Switzerland" startYear="2003" endYear="2006">To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.</TimelineItem>
+<TimelineItem  title="Computer Science Apprenticeship" org="Swisscom" startYear="1999" endYear="2003">To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.</TimelineItem>
+<Divider label={<><IconId size={14} /><Text color="dimmed" ml={5} size="xs">Contact</Text></>} labelPosition="Center" />
+<Box sx={(t)=>({display: "flex", flexDirection: "row", margin: `${t.other.fib( 2, 'em')} ${t.other.fib( 1, 'em')}`, justifyContent: "space-evenly"})}>
+  <Obfuscate tel="+41793790928" aria-label="Call me!">
+    <ActionIcon size={50}><IconPhone color="teal" size={50} stroke={0.5} /></ActionIcon>
+  </Obfuscate>
+  <Obfuscate email="kunz.marco@gmail.com" aria-label="Mail me!">
+    <ActionIcon size={50}><IconMail color="teal" size={50} stroke={0.5} /></ActionIcon>
+  </Obfuscate>
+  <a href="https://www.linkedin.com/in/marcokunz/">
+    <ActionIcon size={50}><IconBrandLinkedin color="teal" size={50} stroke={0.5} /></ActionIcon>
+  </a>
+  <a href="https://github.com/wrthwhl/">
+    <ActionIcon size={50}><IconBrandGithub color="teal" size={50} stroke={0.5} /></ActionIcon>
+  </a>
+</Box>

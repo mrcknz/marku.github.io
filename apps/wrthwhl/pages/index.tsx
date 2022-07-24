@@ -1,6 +1,31 @@
-import { Box, Container, Title, Text, Group, Anchor, Sx } from '@mantine/core';
+import {
+  Box,
+  Container,
+  Title,
+  Text,
+  Group,
+  Anchor,
+  Timeline,
+  Sx,
+  Divider,
+  ActionIcon,
+} from '@mantine/core';
+import {
+  IconSchool,
+  IconBriefcase,
+  IconBulb,
+  IconId,
+  IconStar,
+  IconPhone,
+  IconMail,
+  IconBrandLinkedin,
+  IconBrandGithub,
+} from '@tabler/icons';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
 import TableImage from '../public/table.jpg';
+import { resume } from '@wrthwhl/content';
+import Obfuscate from 'react-obfuscate';
 
 const Golden = ({
   children,
@@ -40,7 +65,7 @@ const Golden = ({
         <Container
           sx={{
             flex: '0 0 auto',
-            maxWidth: '100%',
+            maxWidth: '80ch',
           }}
         >
           {children}
@@ -52,16 +77,105 @@ const Golden = ({
   );
 };
 
-export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
+const mdxComponents = {
+  Section: ({ children, mx, my }) => (
+    <Box
+      sx={(t) => ({
+        margin: `${t.other.fib(my || 3, 'em')} ${t.other.fib(mx || 0, 'em')}`,
+      })}
+    >
+      {children}
+    </Box>
+  ),
+  Title,
+  Text,
+  TimelineItem: ({ children, title, org, startYear, endYear }) => (
+    <Box
+      sx={(t) => ({
+        display: 'flex',
+        flexDirection: 'row',
+        margin: `${t.other.fib(2, 'em')} ${t.other.fib(1, 'em')}`,
+      })}
+    >
+      <Box
+        sx={(t) => ({
+          marginRight: t.other.fib(1, 'em'),
+          fontFamily: t.fontFamilyMonospace,
+        })}
+      >
+        <Box
+          sx={(t) => ({
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            position: 'relative',
+            textAlign: 'center',
+          })}
+        >
+          <Text color="dimmed" inherit>
+            {endYear || 'Now'}
+          </Text>
+          <Box
+            sx={(t) => ({
+              width: '50%',
+              height: '100%',
+              borderRight: `solid 1px ${t.colors.gray[8]}`,
+            })}
+          ></Box>
+          <Text color="dimmed" inherit>
+            {startYear}
+          </Text>
+        </Box>
+      </Box>
+      <Box>
+        <Text
+          size="sm"
+          color="teal"
+          weight="bold"
+          sx={(t) => ({
+            cursor: 'default',
+            '&:hover': { color: t.colors.teal[3] },
+          })}
+        >
+          {title}{' '}
+          <Text size="sm" color="dimmed" component="span">
+            @ {org}
+          </Text>
+        </Text>
+        <Text size="sm" sx={(t) => ({ color: t.colors.gray[4] })}>
+          {children}
+        </Text>
+      </Box>
+    </Box>
+  ),
+  Divider,
+  Timeline,
+  IconBriefcase,
+  IconBulb,
+  IconSchool,
+  IconId,
+  IconStar,
+  IconPhone,
+  IconMail,
+  IconBrandLinkedin,
+  IconBrandGithub,
+  Obfuscate,
+  ActionIcon,
+  Box,
+};
+
+export function Index({ doc }) {
+  const MdxContent = useMDXComponent(doc.body.code);
   return (
     <>
-      <Box
-        sx={{ zIndex: -1, position: 'absolute', width: '100%', height: '100%' }}
+      {/* <Box
+        sx={{
+          zIndex: -1,
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+        }}
       >
         <Image
           src={TableImage}
@@ -69,23 +183,24 @@ export function Index() {
           layout="fill"
           objectFit="cover"
           objectPosition="bottom"
-          quality={100}
           placeholder="blur"
           style={{
             width: '100vw',
             height: '100vh',
-            filter: 'brightness(0.3)',
+            filter: 'brightness(0.4)',
           }}
         />
-      </Box>
+      </Box> */}
       <Golden
         sx={(theme) => ({
           color: 'white',
-          paddingTop: theme.other.fib(5, 'rem'),
-          paddingBottom: theme.other.fib(5, 'rem'),
+          paddingTop: theme.other.fib(2, 'rem'),
         })}
       >
-        <Title
+        <Box sx={(t) => ({ paddingBottom: t.other.fib(2, 'rem') })}>
+          <MdxContent components={mdxComponents} />
+        </Box>
+        {/* <Title
           sx={(theme) => ({
             fontSize: theme.other.fib(3, 'rem'),
             lineHeight: '1',
@@ -142,14 +257,21 @@ export function Index() {
             Web Engineering
           </Text>
           <Text size="sm" sx={{ width: '30rem' }} mb="md">
-            nextjs, reactjs, typescript, GraphQL, PWAs, WebXR
+            typescript, reactjs, nextjs, GraphQL, cypress, mdx, PWAs, micro
+            frontends, WebXR,&nbsp;...
           </Text>
           <Text size="md" weight="bold">
             Efficient Software Delivery
           </Text>
           <Text size="sm" mb="md" sx={{ width: '30rem' }}>
-            Leadership & Collaboration, Agile Methodologies, Continuous
-            Delivery, Monorepos, Serverless, Testing Automation
+            Agile Methodologies, Continuous Delivery, Monorepos, Serverless,
+            Testing Automation
+          </Text>
+          <Text size="md" mt="md" weight="bold">
+            Leadership & Collaboration
+          </Text>
+          <Text size="md" mt="md" weight="bold">
+            Sailing
           </Text>
         </Box>
         <Box
@@ -177,10 +299,14 @@ export function Index() {
           <Text size="md" weight="bold">
             Project Manager Hub Automation
           </Text>
-        </Box>
+        </Box> */}
       </Golden>
     </>
   );
 }
+
+export const getStaticProps = () => {
+  return { props: { doc: resume } };
+};
 
 export default Index;

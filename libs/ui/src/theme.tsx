@@ -1,8 +1,15 @@
 import { MantineThemeOverride } from '@mantine/core';
+import { sageDark, teal as radixTeal } from '@radix-ui/colors';
+const [, , ...dark] = Object.values(sageDark).reverse();
+const [, , ...teal] = Object.values(radixTeal);
 
 export const theme: MantineThemeOverride = {
   colorScheme: 'dark',
-  primaryColor: 'cyan',
+  colors: {
+    dark: dark as any,
+    teal: teal as any,
+  },
+  primaryColor: 'teal',
   headings: { fontFamily: '"Kufam", sans-serif', fontWeight: 100 },
   other: {
     fib: (values, suffix = '', factor = 1) => {
@@ -23,7 +30,7 @@ export const theme: MantineThemeOverride = {
 
 export const styles = {
   // Text: { root: { fontSize: '12px' } },
-  Title: { root: { fontSize: '1.618rem' } },
+  // Title: { root: { fontSize: '1.618rem' } },
 };
 
 declare module '@mantine/core' {
