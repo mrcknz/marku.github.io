@@ -38,6 +38,12 @@ export default class _Document extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+          <script
+            async
+            defer
+            data-website-id="6bed7d61-1efa-4cb4-94b3-50885c34a8dd"
+            src="https://umami-production-764d.up.railway.app/umami.js"
+          />
         </Head>
         <body>
           <Main />
