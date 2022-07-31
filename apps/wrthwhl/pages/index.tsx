@@ -3,12 +3,11 @@ import {
   Container,
   Title,
   Text,
-  Group,
-  Anchor,
   Timeline,
   Sx,
   Divider,
   ActionIcon,
+  Button,
 } from '@mantine/core';
 import {
   IconSchool,
@@ -22,8 +21,6 @@ import {
   IconBrandGithub,
 } from '@tabler/icons';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import Image from 'next/image';
-import TableImage from '../public/table.jpg';
 import { resume } from '@wrthwhl/content';
 import Obfuscate from 'react-obfuscate';
 
@@ -33,8 +30,22 @@ const Golden = ({
   ...rest
 }: {
   children: JSX.Element | JSX.Element[];
-  sx: Sx;
+  sx?: Sx;
 }) => {
+  // const pdfRef = useRef();
+  // const handleDownload = async () => {
+  //   const element = pdfRef.current;
+  //   const canvas = await html2canvas(element);
+  //   const data = canvas.toDataURL('image/png');
+
+  //   const pdf = new jsPDF();
+  //   const imgProperties = pdf.getImageProperties(data);
+  //   const pdfWidth = pdf.internal.pageSize.getWidth();
+  //   const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+
+  //   pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+  //   pdf.save('print.pdf');
+  // };
   return (
     <Box
       sx={[
@@ -43,7 +54,6 @@ const Golden = ({
           flexDirection: 'row',
           alignItems: 'stretch',
           justifyItems: 'center',
-          overflow: 'scroll',
           flexGrow: 1,
           width: '100%',
           height: '100%',
@@ -94,7 +104,8 @@ const mdxComponents = {
       sx={(t) => ({
         display: 'flex',
         flexDirection: 'row',
-        margin: `${t.other.fib(2, 'em')} ${t.other.fib(1, 'em')}`,
+        margin: `${t.other.fib(1, 'em')} ${t.other.fib(1, 'em')}`,
+        breakInside: 'avoid',
       })}
     >
       <Box
@@ -109,7 +120,6 @@ const mdxComponents = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            position: 'relative',
             textAlign: 'center',
           })}
         >
@@ -149,7 +159,9 @@ const mdxComponents = {
       </Box>
     </Box>
   ),
-  Divider,
+  Divider: ({ ...props }) => (
+    <Divider sx={(t) => ({ margin: `${t.other.fib(1, 'em')} 0` })} {...props} />
+  ),
   Timeline,
   IconBriefcase,
   IconBulb,
@@ -167,141 +179,35 @@ const mdxComponents = {
 
 export function Index({ doc }) {
   const MdxContent = useMDXComponent(doc.body.code);
+  const handlePrint = () => {
+    if (window !== undefined) window.print();
+  };
   return (
-    <>
-      {/* <Box
-        sx={{
-          zIndex: -1,
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <Image
-          src={TableImage}
-          alt="table"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="bottom"
-          placeholder="blur"
-          style={{
-            width: '100vw',
-            height: '100vh',
-            filter: 'brightness(0.4)',
-          }}
-        />
-      </Box> */}
-      <Golden
-        sx={(theme) => ({
-          color: 'white',
-          paddingTop: theme.other.fib(2, 'rem'),
+    <Golden>
+      <Box
+        sx={(t) => ({
+          maxWidth: '80ch',
+          margin: `${t.other.fib(1, 'em')} auto 0`,
+          paddingBottom: t.other.fib(1, 'em'),
+          position: 'relative',
         })}
       >
-        <Box sx={(t) => ({ paddingBottom: t.other.fib(2, 'rem') })}>
-          <MdxContent components={mdxComponents} />
-        </Box>
-        {/* <Title
-          sx={(theme) => ({
-            fontSize: theme.other.fib(3, 'rem'),
-            lineHeight: '1',
-            fontWeight: 100,
-          })}
-          ml="-4px"
+        <Button
+          variant="outline"
+          onClick={handlePrint}
+          sx={{
+            '@media print': { display: 'none' },
+            margin: '1em auto',
+            display: 'block',
+            position: 'absolute',
+            right: 0,
+          }}
         >
-          Marco Kunz
-        </Title>
-        <Group mb="xl">
-          <Anchor
-            size="sm"
-            target="_blank"
-            href="https://linkedin.com/in/marcokunz/"
-            sx={{ '&:hover': { textDecoration: 'none' } }}
-          >
-            LinkedIn ›
-          </Anchor>
-          <Anchor
-            size="sm"
-            target="_blank"
-            href="https://github.com/wrthwhl"
-            sx={{ '&:hover': { textDecoration: 'none' } }}
-          >
-            Github ›
-          </Anchor>
-        </Group>
-        <Box my="xl">
-          <Title order={2} mb="xs" mt="xl" sx={{ opacity: 0.8 }}>
-            Current
-          </Title>
-          <Anchor
-            size="sm"
-            target="_blank"
-            sx={{ '&:hover': { textDecoration: 'none' } }}
-            href="https://www.qapter.com/qapter/technology/"
-          >
-            Solera ›
-          </Anchor>
-          <Text size="md" weight="bold">
-            Director Visual Intelligence
-          </Text>
-          <Text size="sm" sx={{ width: '30rem' }}>
-            {
-              "Leading a distributed, crossfunctional team of ~15 people to deliver ML/DL powered technology components for Solera's product portfolio."
-            }
-          </Text>
-        </Box>
-        <Box my="xl">
-          <Title order={2} mb="xs" mt="xl" sx={{ opacity: 0.8 }}>
-            Passion
-          </Title>
-          <Text size="md" weight="bold">
-            Web Engineering
-          </Text>
-          <Text size="sm" sx={{ width: '30rem' }} mb="md">
-            typescript, reactjs, nextjs, GraphQL, cypress, mdx, PWAs, micro
-            frontends, WebXR,&nbsp;...
-          </Text>
-          <Text size="md" weight="bold">
-            Efficient Software Delivery
-          </Text>
-          <Text size="sm" mb="md" sx={{ width: '30rem' }}>
-            Agile Methodologies, Continuous Delivery, Monorepos, Serverless,
-            Testing Automation
-          </Text>
-          <Text size="md" mt="md" weight="bold">
-            Leadership & Collaboration
-          </Text>
-          <Text size="md" mt="md" weight="bold">
-            Sailing
-          </Text>
-        </Box>
-        <Box
-          my="xl"
-          sx={(theme) => ({
-            paddingBottom: theme.other.fib(3, 'rem'),
-          })}
-        >
-          <Title order={2} mb="xs" mt="xl" sx={{ opacity: 0.8 }}>
-            Past
-          </Title>
-          <Text size="sm">Siroop</Text>
-          <Text size="md" weight="bold" mb="md">
-            Product Owner Data Pipeline
-          </Text>
-          <Text size="sm" mt="md">
-            Google Streetview
-          </Text>
-          <Text size="md" weight="bold">
-            Fleet and Field Support Manager
-          </Text>
-          <Text size="sm" mt="md">
-            Swiss Post International
-          </Text>
-          <Text size="md" weight="bold">
-            Project Manager Hub Automation
-          </Text>
-        </Box> */}
-      </Golden>
-    </>
+          Print
+        </Button>
+        <MdxContent components={mdxComponents} />
+      </Box>
+    </Golden>
   );
 }
 

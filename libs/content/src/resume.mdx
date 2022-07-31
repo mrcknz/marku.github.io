@@ -3,55 +3,59 @@ lastEditedAt: '23 July 2022'
 ---
 
 <Title style={{fontWeight: "bold", fontVariant: "all-small-caps", display:"inline-block", }} sx={(t)=>({color: t.colors.teal[5], cursor: "default", "&:hover":{color: t.colors.teal[3]}})}>Marco Kunz</Title>
+<Box sx={{display: "none", "@media print":{display: "block"}}}>
+  <Text sx={(t) => ({color: t.colors.gray[2]})}><IconPhone color="teal" size={20} stroke={0.5} style={{marginRight:"0.5em", verticalAlign:"text-bottom"}} />{"+41 79 379 29 28"}</Text>
+  <Text sx={(t) => ({color: t.colors.gray[2]})}><IconMail color="teal" size={20} stroke={0.5} style={{marginRight:"0.5em", verticalAlign:"text-bottom"}}  />{"kunz.marco@gmail.com"}</Text>
+</Box>
 
 <Box
   sx={(t) => ({
-    margin: `${t.other.fib( 2, 'em')} 0 ${t.other.fib(3, 'em')}`,
+    margin: `${t.other.fib( 2, 'em')} 0 ${t.other.fib(2, 'em')}`,
   })}
 >
   <Text size="md" sx={(t) => ({textAlign: "justify", color: t.colors.gray[2], cursor: "default"})}>Passionate <Text component="i" color="teal" weight="bolder" size="md" sx={(t)=>({textDecoration: "underline", "&:hover":{color: t.colors.teal[3]}})}>Full-Stack Web Developer</Text> and <Text component="i" color="teal" weight="bolder" size="md" sx={(t)=>({textDecoration: "underline", "&:hover":{color: t.colors.teal[3]}})}>Technical Product Owner</Text> with 6+ years of experience in solving problems with software and delivering value to users. Keen eye for the big picture, a forward and holistically-thinking mind, and an unwavering focus on maximizing sustainable outcomes. Broad range of experience with proven ability to lead distributed and interdisciplinary teams and develop them into high-performing units. Looking for an opportunity to join an autonomous, cross-functional team on a purposeful mission.</Text>
 </Box>
 <Divider label={<><IconBulb size={14} /><Text color="dimmed" ml={5} size="xs">Skills</Text></>} labelPosition="Center"  />
-<Box size="sm" sx={(t) => ({ margin: `${t.other.fib( 3, 'em')} ${t.other.fib( 0, 'em')}`, display: "flex", flexDirection: "row", justifyContent: "space-evenly"})}>
+<Box size="sm" sx={(t) => ({ margin: `${t.other.fib( 2, 'em')} ${t.other.fib( 0, 'em')}`, display: "flex", flexDirection: "row", justifyContent: "space-evenly"})}>
   <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
-    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(3).keys()].map((i) => (<IconStar key={1} size={16} />))}</Box>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(3).keys()].map((i) => (<IconStar key={i} size={16} />))}</Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Development</Text>
-      <Text size="sm">Javascript/Typescript, React, Next.js, Nx, MUI, RESTful, OpenAPI</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Development</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Javascript/Typescript, React, Next.js, Nx, MUI, RESTful, OpenAPI</Text>
     </Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Delivery</Text>
-      <Text size="sm">Continuous Delivery, Monorepo</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Delivery</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Continuous Delivery, Monorepo</Text>
     </Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Google Cloud</Text>
-      <Text size="sm">Cloud Run, Storage, Big Query</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Google Cloud</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Cloud Run, Storage, Big Query</Text>
     </Box>
   </Box>
   <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
-    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(2).keys()].map((i) => (<IconStar key={1} size={16} />))}</Box>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(2).keys()].map((i) => (<IconStar key={i} size={16} />))}</Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Development</Text>
-      <Text size="sm">Cypress, Node.js, Mantine, MDX, Python, GraphQL</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Development</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Cypress, Node.js, Mantine, MDX, Python, GraphQL</Text>
     </Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Delivery</Text>
-      <Text size="sm">SQL, Test Automation, Pact Testing, CD4ML, Docker</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Delivery</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">SQL, Test Automation, Pact Testing, CD4ML, Docker</Text>
     </Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Google Cloud</Text>
-      <Text size="sm">Cloud Build, Error Reporting, Registry</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Google Cloud</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Cloud Build, Error Reporting, Registry</Text>
     </Box>
   </Box>
   <Box sx={(t) => ({maxWidth: t.other.fib(5,"em"), margin: `0 ${t.other.fib(-1,"em")}`, textAlign: "center"})}>
-    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(1).keys()].map((i) => (<IconStar key={1} size={16} />))}</Box>
+    <Box sx={(t)=>({color: "teal","& > svg:hover":{color: t.colors.teal[3], fill:t.colors.teal[3]}})}>{[...Array(1).keys()].map((i) => (<IconStar key={i} size={16} />))}</Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Development</Text>
-      <Text size="sm">Storybook, tRPC, Golang, Prisma</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Development</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Storybook, tRPC, Golang, Prisma</Text>
     </Box>
     <Box sx={(t)=>({marginTop: t.other.fib(-1,"em")})}>
-      <Text color="dimmed" size="sm">Google Cloud</Text>
-      <Text size="sm">Cloud Functions</Text>
+      <Text color="dimmed" sx={{fontVariant:"all-small-caps"}} size="sm">Google Cloud</Text>
+      <Text sx={(t) => ({color: t.colors.gray[2]})} size="sm">Cloud Functions</Text>
     </Box>
   </Box>
 </Box>
@@ -65,18 +69,20 @@ lastEditedAt: '23 July 2022'
 <TimelineItem  title="Full-Stack Web Engineering Course" org="Codeworks" startYear="2018" endYear="2018">3 month immersive web engineering course to deepen web development skills and foundational knowledge. Focused on data structures, code patterns as well as modern front and back end frameworks/technologies such as React.js, Angular, GraphQL, Node.js and many more.</TimelineItem>
 <TimelineItem  title="B.Sc. in Business Engineering" org="University of Applied Sciences Northwestern Switzerland" startYear="2003" endYear="2006">Specialization in Supply Chain Management. Key subjects included software engineering, product managenet, project management, production processes, operations, management, marketing and sales.</TimelineItem>
 <TimelineItem  title="Computer Science Apprenticeship" org="Swisscom" startYear="1999" endYear="2003">Combination of on and off-the-job vocational training focusing on systems engineering and administration, application development and electrical engineering. Including vocational baccalaureate for university admission.</TimelineItem>
-<Divider label={<><IconId size={14} /><Text color="dimmed" ml={5} size="xs">Contact</Text></>} labelPosition="Center" />
-<Box sx={(t)=>({display: "flex", flexDirection: "row", margin: `${t.other.fib( 2, 'em')} ${t.other.fib( 1, 'em')}`, justifyContent: "space-evenly"})}>
-  <Obfuscate tel="+41793790928" aria-label="Call me!">
-    <ActionIcon size={50}><IconPhone color="teal" size={50} stroke={0.5} /></ActionIcon>
-  </Obfuscate>
-  <Obfuscate email="kunz.marco@gmail.com" aria-label="Mail me!">
-    <ActionIcon size={50}><IconMail color="teal" size={50} stroke={0.5} /></ActionIcon>
-  </Obfuscate>
-  <a href="https://www.linkedin.com/in/marcokunz/">
-    <ActionIcon size={50}><IconBrandLinkedin color="teal" size={50} stroke={0.5} /></ActionIcon>
-  </a>
-  <a href="https://github.com/wrthwhl/">
-    <ActionIcon size={50}><IconBrandGithub color="teal" size={50} stroke={0.5} /></ActionIcon>
-  </a>
+<Box sx={{"@media print": {display: "none"}}}>
+  <Divider label={<><IconId size={14} /><Text color="dimmed" ml={5} size="xs">Contact</Text></>} labelPosition="Center" />
+  <Box sx={(t)=>({display: "flex", flexDirection: "row", margin: `${t.other.fib( 2, 'em')} ${t.other.fib( 1, 'em')}`, justifyContent: "space-evenly"})}>
+    <Obfuscate tel="+41793790928" aria-label="Call me!">
+      <ActionIcon size={50}><IconPhone color="teal" size={50} stroke={0.5} /></ActionIcon>
+    </Obfuscate>
+    <Obfuscate email="kunz.marco@gmail.com" aria-label="Mail me!">
+      <ActionIcon size={50}><IconMail color="teal" size={50} stroke={0.5} /></ActionIcon>
+    </Obfuscate>
+    <a href="https://www.linkedin.com/in/marcokunz/">
+      <ActionIcon size={50}><IconBrandLinkedin color="teal" size={50} stroke={0.5} /></ActionIcon>
+    </a>
+    <a href="https://github.com/wrthwhl/">
+      <ActionIcon size={50}><IconBrandGithub color="teal" size={50} stroke={0.5} /></ActionIcon>
+    </a>
+  </Box>
 </Box>
